@@ -5,18 +5,18 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>My Favorite Scriptures</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn sort-btn">Create New</a>
 </p>
 <form>
     <p>
         <select asp-for="ScriptureNote" asp-items="Model.Book">
             <option value="">All</option>
         </select>
-        Note: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
+        Note: <input type="text" asp-for="SearchString" class="user-input" />
+        <input type="submit" value="Filter" class="btn" />
     </p>
 </form>
 <table class="table">
@@ -64,9 +64,9 @@
                     @Html.DisplayFor(modelItem => item.Date)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.ID"  class="crud-btn">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID"  class="crud-btn">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID"  class="crud-btn">Delete</a>
                 </td>
             </tr>
         }
